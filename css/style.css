@@ -312,8 +312,9 @@ footer h3 {
   font-size: 1.4em;
   color: #fff;
 }
-footer h3 span {
+footer h3 a {
   color: #4e9eff;
+  text-decoration: none;
 }
 footer .foot {
   margin-top: 0;

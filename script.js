@@ -1,6 +1,6 @@
 let icon = document.querySelector(".icon");
 let nav = document.querySelector("nav.navbar");
-let logo = document.querySelector(".logo a")
+let logo = document.querySelector(".logo a");
 icon.onclick = () => {
   if (icon.innerHTML === `<i class="fa-solid fa-bars"></i>`) {
     nav.style.display = "flex";
@@ -11,6 +11,9 @@ icon.onclick = () => {
   }
 };
 logo.onclick = () => {
-    location.href = "#main";
-    location.reload()
-}
+  location.href = "#main";
+  location.reload();
+};
+// Year
+let year = document.getElementById("year");
+year.innerHTML = new Date().getFullYear();
