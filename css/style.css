@@ -106,7 +106,7 @@ section.main {
 }
 @media (min-width: 668px) {
   nav.navbar {
-    display: none;
+    display: none !important;
   }
 }
 @media (max-width: 1200px) {
