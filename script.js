@@ -18,7 +18,7 @@ logo.onclick = () => {
 //Contact
 contactBtn.onclick = () => {
   location.href = "mailto:bakhomytadres@gmail.com";
-}
+};
 // Year
 let year = document.getElementById("year");
 year.innerHTML = new Date().getFullYear();
