@@ -191,6 +191,14 @@ section.main {
 .social-icons a:hover {
   color: #4e9eff;
 }
+#services .card {
+  opacity: 0;
+  translate: -100%;
+}
+#services .card.slide {
+  opacity: 1;
+  translate: 0;
+}
 .cards {
   text-align: center;
   padding: 100px 50px;
@@ -217,6 +225,16 @@ section.main {
   align-items: center;
   flex-wrap: wrap;
   transition: 0.5s;
+}
+/* Observer Intersection Animation */
+.contact .card {
+  opacity: 0;
+  translate: -100%;
+  transition: 0.5s;
+}
+.contact .card.slide {
+  opacity: 1;
+  translate: 0;
 }
 .content .card:hover {
   transform: scale(1.1);
@@ -287,6 +305,13 @@ section.main {
   border-radius: 6px;
   border: 1px solid #f0f0f0;
   transition: 0.5s;
+  opacity: 0;
+  translate: -100%;
+}
+/* Observer Intersection Animation */
+.projects .content .project-card.slide {
+  opacity: 1;
+  translate: 0;
 }
 .projects .content .project-card:hover {
   transform: scale(1.1);
