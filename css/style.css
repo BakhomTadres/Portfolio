@@ -79,6 +79,9 @@ section.main {
     background-color: #ccc;
     transform: translateX(10px);
   }
+  .main {
+    background-attachment: scroll !important;
+  }
   section.main {
     padding: 100px 20px;
     text-align: center;
@@ -91,8 +94,19 @@ section.main {
     display: block;
     font-size: 40px;
   }
+  .main h2 {
+    width: 100px;
+    position: relative;
+    left: calc(100% - 180px);
+  }
+  .main h2 span {
+    font-size: 1.5em !important;
+  }
+  .main h3 {
+    font-size: 1.6em !important;
+  }
   .main .social-icons {
-    margin: 20px auto;
+    margin: 20px auto -120px;
   }
   .cards .content {
     flex-direction: column;
@@ -118,12 +132,6 @@ section.main {
 @media (max-width: 380px) {
   section.main {
     padding: 100px 0px;
-  }
-  section.main h2 span {
-    font-size: 2.5em;
-  }
-  section.main h3 {
-    font-size: 1.6em;
   }
   .cards .content {
     margin-left: 5px;
