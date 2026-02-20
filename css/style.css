@@ -232,13 +232,12 @@ section.main {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  transition: 0.5s;
+  transition: 0.8s;
 }
 /* Observer Intersection Animation */
 .contact .card {
   opacity: 0;
   translate: -100%;
-  transition: 0.5s;
 }
 .contact .card.slide {
   opacity: 1;
@@ -312,7 +311,7 @@ section.main {
   padding: 20px;
   border-radius: 6px;
   border: 1px solid #f0f0f0;
-  transition: 0.5s;
+  transition: 0.8s;
   opacity: 0;
   translate: -100%;
 }
