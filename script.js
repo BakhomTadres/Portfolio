@@ -84,3 +84,19 @@ const observerContactCards = new IntersectionObserver(
 contactCards.forEach((card) => {
   observerContactCards.observe(card);
 });
+
+// Arrow Up 
+const btnUp = document.querySelector(".btn-up");
+window.onscroll = () => {
+  if (this.scrollY > 100) {
+    btnUp.style.display = "flex";
+  } else {
+    btnUp.style.display = "none";
+  }
+}
+btnUp.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  })
+})
