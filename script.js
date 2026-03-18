@@ -1,4 +1,6 @@
-let icon = document.querySelector(".icon");
+let icon = document.querySelector(".bars");
+let iconMode = document.querySelector(".icon .mode");
+let iconModeUl = document.querySelector(".ul .mode");
 let nav = document.querySelector("nav.navbar");
 let logo = document.querySelector(".logo a");
 let contactBtn = document.getElementById("btn-contact");
@@ -9,6 +11,24 @@ icon.onclick = () => {
   } else if (icon.innerHTML === `<i class="fa-solid fa-x"></i>`) {
     nav.style.display = "none";
     icon.innerHTML = `<i class="fa-solid fa-bars"></i>`;
+  }
+};
+iconMode.onclick = () => {
+  if (iconMode.innerHTML === `<i class="fa-solid fa-sun"></i>`) {
+    iconMode.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+    document.body.classList.add("light-mode");
+  } else if (iconMode.innerHTML === `<i class="fa-solid fa-moon"></i>`) {
+    iconMode.innerHTML = `<i class="fa-solid fa-sun"></i>`;
+    document.body.classList.remove("light-mode");
+  }
+};
+iconModeUl.onclick = () => {
+  if (iconModeUl.innerHTML === `<i class="fa-solid fa-sun"></i>`) {
+    iconModeUl.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+    document.body.classList.add("light-mode");
+  } else if (iconModeUl.innerHTML === `<i class="fa-solid fa-moon"></i>`) {
+    iconModeUl.innerHTML = `<i class="fa-solid fa-sun"></i>`;
+    document.body.classList.remove("light-mode");
   }
 };
 logo.onclick = () => {
@@ -23,69 +43,7 @@ contactBtn.onclick = () => {
 let year = document.getElementById("year");
 year.innerHTML = new Date().getFullYear();
 
-// Observer Intersection Animation for Service Cards
-const serviceCards = document.querySelectorAll("#services .card");
-const observerServicesCards = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((el) => {
-      el.target.classList.toggle("slide", el.isIntersecting);
-      if (el.isIntersecting) {
-        observerServicesCards.unobserve(el.target);
-      }
-    });
-  },
-  {
-    root: null,
-    rootMargin: "0px 0px 0px 400px",
-  },
-);
-serviceCards.forEach((card) => {
-  observerServicesCards.observe(card);
-});
-
-// Observer Intersection Animation for Projects Cards
-const projectCards = document.querySelectorAll(
-  ".projects .content .project-card",
-);
-const observerProjectCards = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((el) => {
-      el.target.classList.toggle("slide", el.isIntersecting);
-      if (el.isIntersecting) {
-        observerProjectCards.unobserve(el.target);
-      }
-    });
-  },
-  {
-    root: null,
-    rootMargin: "0px 0px 0px 400px",
-  },
-);
-projectCards.forEach((card) => {
-  observerProjectCards.observe(card);
-});
-
-// Observer Intersection Animation For Contacts Cards
-const contactCards = document.querySelectorAll(".contact .card");
-const observerContactCards = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((el) => {
-      el.target.classList.toggle("slide", el.isIntersecting);
-      if (el.isIntersecting) {
-        observerContactCards.unobserve(el.target);
-      }
-    });
-  },
-  {
-    root: null,
-    rootMargin: "0px 0px 0px 400px",
-  },
-);
-contactCards.forEach((card) => {
-  observerContactCards.observe(card);
-});
-
-// Arrow Up 
+// Arrow Up
 const btnUp = document.querySelector(".btn-up");
 window.onscroll = () => {
   if (this.scrollY > 100) {
@@ -93,10 +51,10 @@ window.onscroll = () => {
   } else {
     btnUp.style.display = "none";
   }
-}
+};
 btnUp.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
-    behavior: "smooth"
-  })
-})
+    behavior: "smooth",
+  });
+});
