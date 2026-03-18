@@ -15,6 +15,10 @@
   --main-text: #ffffff;
   --secondry-text: #bbbbbb;
 }
+html,
+body {
+  overflow-x: hidden;
+}
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--main-bg);
@@ -45,7 +49,6 @@ body.light-mode {
   font-weight: bold;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0px 0px 5px 2px #666;
   z-index: 999;
   transition: var(--main-transition);
   color: #fff;
@@ -63,6 +66,7 @@ header {
   align-items: center;
   justify-content: space-around;
   height: 90px;
+  max-width: 100%;
 }
 .logo a {
   color: var(--primary-color);
@@ -111,7 +115,7 @@ header .icon,
   width: fit-content;
   cursor: pointer;
   color: var(--main-text);
-  font-size: 30px;
+  font-size: 25px;
 }
 header .icon i,
 .ul .mode {
@@ -138,7 +142,7 @@ section.main {
     position: absolute;
     right: 0;
     top: 100%;
-    width: calc(100% + 40px);
+    width: calc(100%);
     transition: var(--main-transition);
   }
   nav.navbar a {
@@ -170,16 +174,16 @@ section.main {
     height: 250px !important;
   }
   .main .info {
-    width: 80% !important;
+    width: 95% !important;
   }
   .main .info h1 {
-    font-size: 36px;
+    font-size: 34px;
   }
   .main .info h2 {
-    font-size: 32px;
+    font-size: 25px;
   }
   .main .info h3 {
-    font-size: 22px !important;
+    font-size: 16px !important;
   }
   header {
     justify-content: space-between;
@@ -187,7 +191,7 @@ section.main {
   }
   header .icon {
     display: block;
-    font-size: 30px;
+    font-size: 25px;
   }
   .main h3 {
     font-size: 1.6em !important;
@@ -197,6 +201,10 @@ section.main {
   }
   .cards .content {
     flex-direction: column;
+  }
+  .project-btn {
+    font-size: 15px !important;
+    padding: 10px 15px !important;
   }
   footer {
     flex-direction: column;
@@ -211,9 +219,17 @@ section.main {
     display: none !important;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
   section.main {
     flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+  .main .info {
+    margin-left: 0 !important;
+  }
+  .main .social-icons {
+    margin: 20px auto -120px;
   }
 }
 @media (max-width: 380px) {
@@ -251,6 +267,7 @@ section.main {
 .main .info {
   width: 550px;
   margin-top: 60px;
+  margin-left: 60px;
 }
 .main h1 {
   color: var(--main-text);
@@ -281,7 +298,8 @@ section.main {
   color: #fff;
 }
 .main .main-btn:hover,
-#btn-contact:hover {
+#btn-contact:hover,
+.project-btn:hover {
   background-color: transparent;
   transform: scale(1.1);
   color: var(--main-text);
@@ -323,8 +341,6 @@ section.main {
   transition: var(--main-transition);
   background-color: var(--card-bg);
 }
-/* Observer Intersection Animation */
-
 .content .card:hover,
 #services .content .card:hover {
   transform: scale(1.1);
@@ -344,14 +360,10 @@ section.main {
 .content .card button:hover {
   background-color: rgb(11 47 98);
 }
-.icon {
-  width: 100%;
-  font-size: 60px;
-  color: var(--primary-color);
-}
 .card h3 {
   color: var(--primary-color);
   font-size: 1.8em;
+  margin: 10px 0;
 }
 .card p {
   font-size: 1.2em;
@@ -359,8 +371,12 @@ section.main {
   color: var(--secondry-text);
   margin: 10px 0;
 }
+.card .icon {
+  font-size: 40px;
+  margin-top: 20px;
+}
 .projects {
-  padding: 100px 50px;
+  padding: 100px 40px;
   min-height: 100vh;
 }
 .projects img {
@@ -386,8 +402,6 @@ section.main {
   border: 1px solid var(--card-bg);
   transition: var(--main-transition);
 }
-/* Observer Intersection Animation */
-
 .projects .content .project-card:hover {
   transform: scale(1.1);
 }
@@ -411,22 +425,23 @@ section.main {
   font-weight: bold;
   transition: var(--main-transition);
 }
-.project-card .info a:hover {
-  color: var(--primary-color);
-}
-.contact .card h3 {
-  width: 100%;
-}
-.contact .card .icon {
-  width: 100%;
+.project-btn {
+  border: none;
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  color: #fff;
+  border: 3px solid var(--primary-color);
+  transition: var(--main-transition);
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 18px;
 }
 #btn-contact {
   border: none;
-  display: block;
-  background-color: var(--primary-color);
   color: #fff;
-  padding: 10px 20px;
+  display: block;
   border-radius: 9px;
+  padding: 10px 20px;
   font-size: 20px;
   cursor: pointer;
   transition: var(--main-transition);
@@ -435,7 +450,7 @@ section.main {
 }
 footer {
   padding: 20px;
-  background-color: #000016;
+  background-color: var(--navbar-bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
