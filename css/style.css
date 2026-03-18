@@ -109,20 +109,31 @@ nav.ul a:hover::before {
 nav a:hover {
   color: var(--primary-color);
 }
-header .icon,
-.ul .mode {
+header .icon {
+  display: none;
+}
+header .icon .mode,
+header .icon .bars,
+.mode-wide {
   display: none;
   width: fit-content;
   cursor: pointer;
   color: var(--main-text);
   font-size: 25px;
 }
+.mode-wide,
+.icon .mode,
+.icon .bars {
+  border: none;
+  background-color: var(--navbar-bg);
+}
 header .icon i,
-.ul .mode {
+.mode-wide i {
   transition: var(--main-transition);
 }
-header .icon i:hover,
-.ul .mode i:hover {
+header .icon .mode i:hover,
+header .icon .bars i:hover,
+.mode-wide i:hover {
   color: var(--primary-color);
 }
 section.main {
@@ -160,6 +171,9 @@ section.main {
   nav.navbar a:hover {
     color: var(--primary-color);
     transform: translateX(10px);
+  }
+  .mode-wide {
+    display: none !important;
   }
   .main {
     background-attachment: scroll !important;

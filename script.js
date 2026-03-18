@@ -1,6 +1,6 @@
 let icon = document.querySelector(".bars");
 let iconMode = document.querySelector(".icon .mode");
-let iconModeUl = document.querySelector(".ul .mode");
+let iconModeUl = document.querySelector(".mode-wide");
 let nav = document.querySelector("nav.navbar");
 let logo = document.querySelector(".logo a");
 let contactBtn = document.getElementById("btn-contact");
