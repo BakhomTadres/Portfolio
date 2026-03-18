@@ -4,6 +4,17 @@ let iconModeUl = document.querySelector(".ul .mode");
 let nav = document.querySelector("nav.navbar");
 let logo = document.querySelector(".logo a");
 let contactBtn = document.getElementById("btn-contact");
+window.onload = () => {
+  if (localStorage.getItem("mode") == "sun") {
+    iconMode.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+    iconModeUl.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+    document.body.classList.add("light-mode");
+  } else if (localStorage.getItem("mode") == "moon") {
+    iconMode.innerHTML = `<i class="fa-solid fa-sun"></i>`;
+    iconModeUl.innerHTML = `<i class="fa-solid fa-sun"></i>`;
+    document.body.classList.remove("light-mode");
+  }
+};
 icon.onclick = () => {
   if (icon.innerHTML === `<i class="fa-solid fa-bars"></i>`) {
     nav.style.display = "flex";
@@ -16,19 +27,27 @@ icon.onclick = () => {
 iconMode.onclick = () => {
   if (iconMode.innerHTML === `<i class="fa-solid fa-sun"></i>`) {
     iconMode.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+    iconModeUl.innerHTML = `<i class="fa-solid fa-moon"></i>`;
     document.body.classList.add("light-mode");
+    localStorage.setItem("mode", "sun");
   } else if (iconMode.innerHTML === `<i class="fa-solid fa-moon"></i>`) {
     iconMode.innerHTML = `<i class="fa-solid fa-sun"></i>`;
+    iconModeUl.innerHTML = `<i class="fa-solid fa-sun"></i>`;
     document.body.classList.remove("light-mode");
+    localStorage.setItem("mode", "moon");
   }
 };
 iconModeUl.onclick = () => {
   if (iconModeUl.innerHTML === `<i class="fa-solid fa-sun"></i>`) {
+    iconMode.innerHTML = `<i class="fa-solid fa-moon"></i>`;
     iconModeUl.innerHTML = `<i class="fa-solid fa-moon"></i>`;
     document.body.classList.add("light-mode");
+    localStorage.setItem("mode", "sun");
   } else if (iconModeUl.innerHTML === `<i class="fa-solid fa-moon"></i>`) {
+    iconMode.innerHTML = `<i class="fa-solid fa-sun"></i>`;
     iconModeUl.innerHTML = `<i class="fa-solid fa-sun"></i>`;
     document.body.classList.remove("light-mode");
+    localStorage.setItem("mode", "moon");
   }
 };
 logo.onclick = () => {
