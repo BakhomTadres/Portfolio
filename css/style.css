@@ -412,7 +412,7 @@ section.main {
   min-height: 100vh;
 }
 .projects img {
-  max-width: calc(100% + 40px);
+  width: calc(100% + 40px);
   margin-top: -20px;
   margin-left: -20px;
   border-top-left-radius: 6px;
